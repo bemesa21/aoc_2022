@@ -3,19 +3,41 @@ defmodule AdventOfCode.Day01Test do
 
   import AdventOfCode.Day01
 
-  @tag :skip
-  test "part1" do
-    input = nil
-    result = part1(input)
+  @test_input """
+  1000
+  2000
+  3000
 
-    assert result
+  4000
+
+  5000
+  6000
+
+  7000
+  8000
+  9000
+
+  10000
+  """
+
+  test "part1" do
+    result = part1(@test_input)
+
+    assert result == 24000
   end
 
-  @tag :skip
   test "part2" do
-    input = nil
-    result = part2(input)
+    result = part2(@test_input)
+    assert result == 45000
+  end
 
-    assert result
+  test "calories_per_elf/1 returns a list of integer lists" do
+    assert calories_per_elf(@test_input) == [
+             [1000, 2000, 3000],
+             [4000],
+             [5000, 6000],
+             [7000, 8000, 9000],
+             [10000]
+           ]
   end
 end
