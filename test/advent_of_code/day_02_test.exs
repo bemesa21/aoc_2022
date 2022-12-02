@@ -3,12 +3,15 @@ defmodule AdventOfCode.Day02Test do
 
   import AdventOfCode.Day02
 
-  @tag :skip
-  test "part1" do
-    input = nil
-    result = part1(input)
+  @test_input """
+  A Y
+  B X
+  C Z
+  """
 
-    assert result
+  test "part1" do
+    result = part1(@test_input)
+    assert result == 15
   end
 
   @tag :skip
@@ -17,5 +20,9 @@ defmodule AdventOfCode.Day02Test do
     result = part2(input)
 
     assert result
+  end
+
+  test "format_input/1 returns a list of tuples" do
+    assert format_input(@test_input) == [{"A", "Y"}, {"B", "X"}, {"C", "Z"}]
   end
 end
