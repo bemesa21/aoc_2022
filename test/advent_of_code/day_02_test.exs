@@ -14,12 +14,9 @@ defmodule AdventOfCode.Day02Test do
     assert result == 15
   end
 
-  @tag :skip
   test "part2" do
-    input = nil
-    result = part2(input)
-
-    assert result
+    result = part2(@test_input)
+    assert result == 12
   end
 
   test "format_input/1 returns a list of tuples" do
